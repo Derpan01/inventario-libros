@@ -11,7 +11,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8000/api/token/", {
+      const response = await fetch("https://inventario-libros.onrender.com/api/token/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

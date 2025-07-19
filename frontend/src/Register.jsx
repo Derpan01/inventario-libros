@@ -12,7 +12,7 @@ export default function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:8000/api/register/", {
+      const res = await fetch("https://inventario-libros.onrender.com/api/register/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password, email }),
@@ -23,7 +23,7 @@ export default function Register() {
         throw new Error(data.error || "Registration failed");
       }
 
-      const loginRes = await fetch("http://localhost:8000/api/token/", {
+      const loginRes = await fetch("https://inventario-libros.onrender.com/api/token/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),

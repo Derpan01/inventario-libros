@@ -11,7 +11,7 @@ export default function AddBook() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:8000/api/books/", {
+    fetch("https://inventario-libros.onrender.com/api/books/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -6,7 +6,7 @@ export default function BookList() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/books/", {
+    fetch("https://inventario-libros.onrender.com/api/books/", {
       headers: {
         Authorization: "Bearer " + getToken(),
       },
