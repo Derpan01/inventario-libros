@@ -30,7 +30,7 @@ CORS_ALLOWED_ORIGINS = [
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY', default='dummy')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['inventario-libros.onrender.com', 'localhost', '127.0.0.1']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
