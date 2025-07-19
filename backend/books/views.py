@@ -4,6 +4,14 @@ from .models import Book, WishlistEntry
 from .serializers import BookSerializer, WishlistEntrySerializer
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics, permissions
+from .serializers import RegisterSerializer  # add to your import line
+
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    permission_classes = [permissions.AllowAny]
+    serializer_class = RegisterSerializer
+
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()

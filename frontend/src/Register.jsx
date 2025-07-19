@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { saveToken } from "./auth";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -22,7 +23,17 @@ export default function Register() {
         throw new Error(data.error || "Registration failed");
       }
 
-      navigate("/");
+      const loginRes = await fetch("http://localhost:8000/api/token/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (!loginRes.ok) throw new Error("Login after registration failed");
+
+      const loginData = await loginRes.json();
+      saveToken(loginData.access);
+      navigate("/home");
     } catch (err) {
       setError(err.message);
     }

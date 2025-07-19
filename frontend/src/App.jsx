@@ -3,6 +3,7 @@ import Login from "./Login";
 import Register from "./Register";
 import BookList from "./BookList";
 import AddBook from "./AddBook";
+import Home from "./Home";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/books" element={<BookList />} />
         <Route path="/add" element={<AddBook />} />
       </Routes>
